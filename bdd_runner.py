@@ -1,5 +1,8 @@
+# yet to be finalised
+
+
 from behave import __main__ as behave
-from config_files.config import TAGS
+from config.config import TAGS
 import subprocess
 import shutil
 import os

@@ -1,7 +1,7 @@
 from basepage.BaseClass import BasePage
 
 
-class AddNewMachine(BasePage):
+class AddNewMachinePage(BasePage):
 
     def __init(self, driver):
         super.__init__(driver)

@@ -1,20 +1,46 @@
-from page_model.add_new_machine_page import AddNewMachine
-from page_model.new_alignment_page import NewAlignment
-from page_model.select_machine_page import SelectMachine
+from basepage.DriverClass import *
+from page_model.add_new_machine_page import AddNewMachinePage
+from page_model.new_alignment_page import NewAlignmentPage
+from page_model.select_machine_page import SelectMachinePage
 
 import allure
 from allure_commons.types import AttachmentType
 
 
-def before_feature(context, feature):
-    platformName = context.config_files.userdata.get('platform_name')
+def before_all(context):
+    context.config.setup_logging()
+    driver_setup(context.config.userdata.get("appium_host", "unknown"),
+                 context.config.userdata.get("appium_port", "unknown"),
+                 context.config.userdata.get("appium_version", "unknown"),
+                 context.config.userdata.get("platform_name", "unknown"),
+                 context.config.userdata.get("platform_version", "unknown"),
+                 context.config.userdata.get("device_name", "unknown"),
+                 context.config.userdata.get("browser_name", "unknown"),
+                 context.config.userdata.get("device_orientation", "unknown"),
+                 context.config.userdata.get("test_name", "unknown"),
+                 context.config.userdata.get("app_uri", "unknown"))
+    start_driver(context)
 
-    feature.new_alignment_page = NewAlignment(context.driver)
-    feature.add_new_machine_page = AddNewMachine(context.driver)
-    feature.select_machine_page = SelectMachine(context.driver)
+    # feature.new_alignment_page = NewAlignmentPage(context.driver)
+    # feature.add_new_machine_page = AddNewMachinePage(context.driver)
+    # feature.select_machine_page = SelectMachinePage(context.driver)
+
+
+def after_all(context):
+    pass
+    #uninstall the app on cloude device
+    #context.driver.remove_app(context.config.userdata.get("app_uri"));
+
+
+def before_feature(context, feature):
+    # launch_app()
+    pass
 
 
 def before_scenario(context, scenario):
+    # start_activity()
+    # Android ONLY
+    # get_current_activity()
     pass
 
 
@@ -24,6 +50,10 @@ def after_scenario(context, scenario):
 
 def after_feature(context, feature):
     context.driver.quit()
+
+
+def before_step(context, step):
+    pass
 
 
 def after_step(context, step):

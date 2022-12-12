@@ -6,7 +6,7 @@ import time
 driver1 = Driver()
 log = cl.customLogger()
 
-driver = driver1.getDriverMethod()
+driver = driver1.driver_setup()
 log.info('Launch app')
 
 bp = BasePage(driver)
