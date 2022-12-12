@@ -1,4 +1,4 @@
-from base.BaseClass import BasePage
+from basepage.BaseClass import BasePage
 import utilities.CustomLogger as cl
 
 

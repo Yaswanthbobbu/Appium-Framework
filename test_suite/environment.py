@@ -7,6 +7,8 @@ from allure_commons.types import AttachmentType
 
 
 def before_feature(context, feature):
+    platformName = context.config_files.userdata.get('platform_name')
+
     feature.new_alignment_page = NewAlignment(context.driver)
     feature.add_new_machine_page = AddNewMachine(context.driver)
     feature.select_machine_page = SelectMachine(context.driver)

@@ -1,4 +1,4 @@
-from base.BaseClass import BasePage
+from basepage.BaseClass import BasePage
 
 
 class AddNewMachine(BasePage):

@@ -1,6 +1,6 @@
-from base.DriverClass import Driver
+from basepage.DriverClass import Driver
 import utilities.CustomLogger as cl
-from base.BaseClass import BasePage
+from basepage.BaseClass import BasePage
 import time
 
 driver1 = Driver()
