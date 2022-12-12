@@ -1,0 +1,1 @@
+TAGS = '--tags=-@wip --tags=-@skip --tags=-@bug'
