@@ -71,6 +71,7 @@ class BasePage:
         try:
             locatorType = locatorType.lower()
             element = self.getElement(locatorValue, locatorType)
+            element.clear()
             element.send_keys(text)
             self.log.info(
                 "Send text  on Element with LocatorType: " + locatorType + " and with the locatorValue :" + locatorValue)

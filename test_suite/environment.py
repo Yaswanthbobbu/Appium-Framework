@@ -1,4 +1,5 @@
 from basepage.DriverClass import *
+from basepage.AppiumClass import AppiumUtil as AU
 from page_model.add_new_machine_page import AddNewMachinePage
 from page_model.new_alignment_page import NewAlignmentPage
 from page_model.select_machine_page import SelectMachinePage
@@ -29,7 +30,7 @@ def before_all(context):
 def after_all(context):
     pass
     #uninstall the app on cloude device
-    #context.driver.remove_app(context.config.userdata.get("app_uri"));
+    context.driver.remove_app(context.config.userdata.get("app_uri"))
 
 
 def before_feature(context, feature):
@@ -49,7 +50,7 @@ def after_scenario(context, scenario):
 
 
 def after_feature(context, feature):
-    context.driver.quit()
+    cleanup_driver(context)
 
 
 def before_step(context, step):

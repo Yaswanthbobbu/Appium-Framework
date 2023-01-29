@@ -1,6 +1,3 @@
-# yet to be finalised
-
-
 from behave import __main__ as behave
 from config.config import TAGS
 import subprocess
@@ -12,5 +9,5 @@ results_dir = cwd + '//results'
 if os.path.exists(results_dir):
     shutil.rmtree(results_dir)
 behave.main('-f allure -o results ' + TAGS)
-# subprocess.Popen('utilities\\allure\\bin\\allure serve results', shell=True, stdout=subprocess.PIPE,
-#                  stderr=subprocess.PIPE)
+subprocess.Popen('utilities\\allure\\bin\\allure serve results', shell=True, stdout=subprocess.PIPE,
+                 stderr=subprocess.PIPE)

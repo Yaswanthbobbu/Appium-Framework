@@ -50,3 +50,6 @@ def start_driver(context):
 
     except Exception as e:
         raise e
+
+def cleanup_driver(context):
+    context.driver.quit()
